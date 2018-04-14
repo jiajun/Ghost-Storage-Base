@@ -49,7 +49,7 @@ class StorageBase {
     }
 
     getUniqueFileName(image, targetDir) {
-        var ext = path.extname(image.name), name;
+        var ext = path.extname(image.name).toLowerCase(), name;
 
         // poor extension validation
         // .1 is not a valid extension
@@ -63,9 +63,7 @@ class StorageBase {
     }
 
     getSanitizedFileName(fileName) {
-        // below only matches ascii characters, @, and .
-        // unicode filenames like город.zip would therefore resolve to ----.zip
-        return fileName.replace(/[^\w@.]/gi, '-');
+        return fileName;
     }
 }
 
