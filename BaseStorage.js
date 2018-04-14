@@ -54,7 +54,7 @@ class StorageBase {
         // poor extension validation
         // .1 is not a valid extension
         if (!ext.match(/.\d/)) {
-            name = this.getSanitizedFileName(path.basename(image.name, ext));
+            name = this.getSanitizedFileName(path.basename(image.name, path.extname(image.name)));
             return this.generateUnique(targetDir, name, ext, 0);
         } else {
             name = this.getSanitizedFileName(path.basename(image.name));
