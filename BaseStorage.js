@@ -63,7 +63,7 @@ class StorageBase {
     }
 
     getSanitizedFileName(fileName) {
-        return fileName;
+        return fileName.toLowerCase();
     }
 }
 
